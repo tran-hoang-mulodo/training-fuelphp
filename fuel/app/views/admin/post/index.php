@@ -25,7 +25,7 @@
                     <td><?php echo str::truncate($post->description_short, 50);?></td>
                     <td><?php echo $post->created_at;?></td>
                     <td style="text-align: center"><?php echo $post->category_id;?></td>
-                    <td><a href="view/<?php echo $post->id; ?>" class="btn btn-primary">Sửa</a>
+                    <td><a href="edit/<?php echo $post->id; ?>" class="btn btn-primary">Sửa</a>
                         <a onclick="return comfirm('Bạn có chắc muốn xóa không!')" class="btn btn-danger" href="delete/<?php echo $post->id;?>">Xóa</a>
                     </td>
                 </tr>
