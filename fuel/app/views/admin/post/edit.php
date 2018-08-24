@@ -2,14 +2,15 @@
     <div class="form-admin">
         <h2>Vertical (basic) Form</h2>
         <hr/>
-        <form action="edit/<?php echo $post->id ?>" method="post">
+        <form action="<?php echo $post->id ?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" value="<?php echo $post->title; ?>" name="title" placeholder="Enter title">
             </div>
             <div class="form-group">
                 <label for="image">Image:</label>
-                <input type="file" class="form-control" name="image" value="<?php echo $post->image; ?>">
+                <input type="file" class="form-control" name="file" value="<?php echo $post->image; ?>">
+                <input type="hidden" name="image" value="<?php echo $post->image; ?>">
                 <?php echo Asset::img("$post->image", array('class' => 'thumbnail')) ?>
             </div>
             <div class="form-group">

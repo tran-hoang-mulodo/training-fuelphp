@@ -2,14 +2,14 @@
     <div class="form-admin">
         <h2>Vertical (basic) Form</h2>
         <hr/>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" name="title" placeholder="Enter title">
             </div>
             <div class="form-group">
                 <label for="image">Image:</label>
-                <input type="file" class="form-control" name="image">
+                <input type="file" class="form-control" name="file">
             </div>
             <div class="form-group">
                 <label for="pwd">description Short:</label>
@@ -33,10 +33,9 @@
             <div class="form-group">
                 <label for="email">Category Id:</label>
                 <select name="category_id">
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
+                    <?php foreach($categories as $category): ?>
+                        <option value="<?php echo $category->id;?>"><?php echo $category->name;?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-group">

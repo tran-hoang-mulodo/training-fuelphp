@@ -1,7 +1,9 @@
 <div class="container">
     <h4>Home > Post</h4>
-
     <a href="add" class="btn btn-primary">Thêm mới</a>
+    <?php if (Session::get_flash('success')):  ?>
+        <label class="alert alert-success text-center"><?php echo Session::get_flash('success');?></label>
+    <?php endif; ?>
     <hr/>
     <div class="table-responsive">
         <table class="table">
@@ -20,9 +22,9 @@
                 <?php foreach ($posts as $post): ?>
                 <tr>
                     <td><?php echo $post->id;?></td>
-                    <td><?php echo str::truncate($post->title, 30);?></td>
+                    <td><?php echo str::truncate($post->title, 20);?></td>
                     <td><?php echo Asset::img($post->image, array('class' => 'thumbnail'));?></td>
-                    <td><?php echo str::truncate($post->description_short, 50);?></td>
+                    <td><?php echo str::truncate($post->description_short, 30);?></td>
                     <td><?php echo $post->created_at;?></td>
                     <td style="text-align: center"><?php echo $post->category_id;?></td>
                     <td><a href="edit/<?php echo $post->id; ?>" class="btn btn-primary">Sửa</a>
