@@ -9,8 +9,25 @@ class Controller_Admin_Post extends Controller_Template
         if (empty($username)) {
             Response::redirect('admin/login', 'location');
         } else {
-            $posts = Model_Posts::find('all');
-            $data = array('posts' => $posts, 'user' => $username, 'title_page' => 'ShopOnline Admin');
+            $pagination = \Pagination::forge('pagination', array(
+                'pagination_url' => \Uri::base(false) . 'admin/post/index/',
+                'total_items' => Model_Posts::count(),
+                'per_page' => 5,
+                'uri_segment' => 4,
+                'num_links' => 5,
+            ));
+            $posts = Model_Posts::query()
+                ->rows_offset($pagination->offset)
+                ->rows_limit($pagination->per_page)
+                ->get();
+            $categories = Model_Categories::find('all');
+            $data = array(
+                'posts' => $posts,
+                'user' => $username,
+                'title_page' => 'ShopOnline Admin',
+                'pagination' => $pagination,
+                'categories' => $categories
+            );
             $this->template->title = 'ShopOnline Admin';
             $this->template->content = View::forge('admin/post/index', $data);
             $this->template->header = View::forge('admin/page/header', $data);

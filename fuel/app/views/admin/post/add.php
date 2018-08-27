@@ -1,4 +1,5 @@
 <div class="container">
+    <a href="<?php echo Uri::create('admin/post/index'); ?>" class="btn btn-primary">Click to back</a>
     <div class="form-admin">
         <h2>Vertical (basic) Form</h2>
         <hr/>

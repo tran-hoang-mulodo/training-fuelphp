@@ -47,8 +47,8 @@
             <span>Posts</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="post/index">Danh sách</a>
-            <a class="dropdown-item" href="post/add">Thêm mới</a>
+            <a class="dropdown-item" href="<?php echo Uri::create('admin/post/index'); ?>">Danh sách</a>
+            <a class="dropdown-item" href="<?php echo Uri::create('admin/post/add'); ?>">Thêm mới</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -57,20 +57,10 @@
             <span>Cotegory</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="categoryDropdown">
-            <a class="dropdown-item" href="login.html">Danh sách</a>
-            <a class="dropdown-item" href="register.html">Thêm mới</a>
+            <a class="dropdown-item" href="<?php echo Uri::create('admin/categories/index'); ?>">Danh sách</a>
+            <a class="dropdown-item" href="<?php echo Uri::create('admin/categories/add'); ?>">Thêm mới</a>
           </div>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-        </li> -->
       </ul>
 
       <div id="content-wrapper">
