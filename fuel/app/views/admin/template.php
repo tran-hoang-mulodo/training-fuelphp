@@ -36,7 +36,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="<?php echo Uri::create('admin/index') ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
@@ -111,6 +111,7 @@
     <?php echo Asset::js('admin/jquery.min.js'); ?>
     <?php echo Asset::js('admin/bootstrap.bundle.min.js'); ?>
     <?php echo Asset::js('admin/sb-admin.js'); ?>
+    <?php echo Asset::js('admin/upload-image.js'); ?>
     <?php echo Asset::js('admin/demo/datatables-demo.js'); ?>
     <?php echo Asset::js('admin/ckeditor.js');?>
 

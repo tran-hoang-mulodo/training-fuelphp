@@ -33,8 +33,9 @@
                             <?php } ?>
                         <?php endforeach;?>
                     </td>
-                    <td><a href="edit/<?php echo $post->id; ?>" class="btn btn-primary">Sửa</a>
-                        <a onclick="return comfirm('Bạn có chắc muốn xóa không!')" class="btn btn-danger" href="delete/<?php echo $post->id;?>">Xóa</a>
+                    <td>
+                        <a href="<?php echo Uri::create('admin/post/edit/'.$post->id)?>" class="btn btn-primary">Sửa</a>
+                        <a onclick="return comfirm('Bạn có chắc muốn xóa không!')" class="btn btn-danger" href="<?php echo Uri::create('admin/post/delete/'.$post->id)?> ?>">Xóa</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

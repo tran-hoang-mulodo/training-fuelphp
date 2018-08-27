@@ -24,4 +24,5 @@
   <a class="view-more" href="/posts/view/<?php echo $post->id; ?>">View More</a>
   <hr>
 <?php endforeach; ?>
+<?php echo Pagination::instance('paginationpost'); ?>
 </div>

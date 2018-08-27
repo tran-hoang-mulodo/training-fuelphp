@@ -10,7 +10,9 @@
             </div>
             <div class="form-group">
                 <label for="image">Image:</label>
-                <input type="file" class="form-control" name="file">
+                <input type="file" class="form-control" onchange="readURL(this);" name="file">
+                <img src="#" class="thumbnail" id="image-add"/>
+                <input type="hidden" name="image" value=""/>
             </div>
             <div class="form-group">
                 <label for="pwd">description Short:</label>
