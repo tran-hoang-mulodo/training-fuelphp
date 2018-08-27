@@ -54,7 +54,7 @@
       <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
     </div>
   </li>
-  <form action="login/logout" method="post">
+  <form action="<?php echo Uri::create('admin/login/logout');?>" method="post">
       <input type="submit" class="btn btn-primary logout-admin" name="logout" value="Logout"/>
   </form>
 </ul>
