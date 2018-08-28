@@ -28,8 +28,23 @@ class Controller_Posts extends Controller_Template
                 'id' => $id
             )
         ));
-        $data = array('post' => $post);
+        $categories = Model_Categories::find('all');
+        $data = array('post' => $post, 'categories' => $categories);
         $this->template->title = "Post view";
+        $this->template->sidebar = View::forge('page/sidebar', $data);
         $this->template->content = View::forge('posts/view', $data, false);
+    }
+
+    public function action_search()
+    {
+        if (isset($_GET['search'])) {
+            $titleSearch = $_GET['name'];
+            $posts = DB::query("SELECT * FROM posts WHERE title LIKE '%$titleSearch%'")->as_object('Model_Posts')->execute();
+            $categories = Model_Categories::find('all');
+            $data = array('posts' => $posts, 'categories' => $categories);
+            $this->template->title = 'ShopOnline Search';
+            $this->template->sidebar = View::forge('page/sidebar', $data);
+            $this->template->content = View::forge('posts/result', $data);
+        }
     }
 }

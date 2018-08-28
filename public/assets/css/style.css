@@ -42,3 +42,9 @@ body {
 .pagination .active{
     background: rgb(65, 56, 61);
 }
+.img-search{
+    width: 100px;
+    height: 70px;
+    float: left;
+    margin-right: 30px;
+}
